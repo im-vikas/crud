@@ -20,9 +20,9 @@ public class RecipeController {
 	public List<Recipe> getAllRecipe() {
 		return reciperepository.findAll();
 	}
-
+	
 	@PostMapping("/recipe")
-	public Recipe createRecipe(@Valid @RequestBody Recipe recipe) {
+	public Recipe createRecipe(@Valid Recipe recipe) {
 		return reciperepository.save(recipe);
 	}
 
