@@ -6,8 +6,6 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -32,8 +30,8 @@ public class Recipe implements Serializable {
 	@NotBlank
 	private String title; // name of recipe
 
-	@NotNull
-	private int servingsize; // count of people
+	@NotBlank
+	private String servingsize; // count of people
 
 	@NotBlank
 	private String indicator; // veg or nonveg
@@ -56,6 +54,13 @@ public class Recipe implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
 	private Date updatedAt;
+	
+	
+	public Recipe() {
+		super();
+	}
+	
+	
 
 	public Long getId() {
 		return id;
@@ -73,11 +78,11 @@ public class Recipe implements Serializable {
 		this.title = title;
 	}
 
-	public int getServingsize() {
+	public String getServingsize() {
 		return servingsize;
 	}
 
-	public void setServingsize(int servingsize) {
+	public void setServingsize(String servingsize) {
 		this.servingsize = servingsize;
 	}
 
