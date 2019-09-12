@@ -56,11 +56,19 @@ public class Recipe implements Serializable {
 	private Date updatedAt;
 	
 	
-	public Recipe() {
+	
+	
+	
+	public Recipe(@NotBlank String title, @NotBlank String servingsize, @NotBlank String indicator,
+			@NotBlank String cookingins, @NotBlank String ingredients, @NotBlank String url) {
 		super();
+		this.title = title;
+		this.servingsize = servingsize;
+		this.indicator = indicator;
+		this.cookingins = cookingins;
+		this.ingredients = ingredients;
+		this.url = url;
 	}
-	
-	
 
 	public Long getId() {
 		return id;
