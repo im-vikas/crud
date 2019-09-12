@@ -15,11 +15,14 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
 
 import com.example.cookingrecipe.model.Recipe;
 import com.example.cookingrecipe.repository.RecipeRepository;
 import com.example.cookingrecipe.service.RecipeService;
+import static org.mockito.Mockito.when;
 
 /**
  * @author C67708
@@ -71,15 +74,40 @@ public class ServiceImplTest {
 
 	}
 	
-	/*
-	 * @Test public void testallRecipe() { Optional<Recipe> recipe =
-	 * Optional.empty();
-	 * 
-	 * when(reciperepository.findById(1L)).thenReturn(recipe);
-	 * 
-	 * Recipe searchRecipe = recipeService.getById(1L);
-	 * 
-	 * assertEquals(recipe.get(), searchRecipe.); }
-	 */
+	
+	@Test
+	public void testgetById() {
+		Recipe recipe = new Recipe("test", "test", "test", "test", "test", "test");
+		Optional<Recipe> orecipe = Optional.of(recipe);
+		
+		when(reciperepository.findById(1L)).thenReturn(orecipe);
+		Recipe recipe1 = recipeService.getById(1L);
+		assertEquals(orecipe.get(),recipe1);
+	}
+	
+	
+	@Test
+	public void testuRecipe() {
+		Recipe recipe = new Recipe("test", "test", "test", "test", "test", "test");
+		Optional<Recipe> orecipe = Optional.of(recipe);
+		when(reciperepository.findById(1L)).thenReturn(orecipe);
+		Recipe updatedRecipe = new Recipe("updated test", "test", "test", "test", "test", "test"); 
+		when(reciperepository.save(recipe)).thenReturn(updatedRecipe);
+		
+		Recipe serviceRecipe = recipeService.uRecipe(1L, updatedRecipe);
+		
+		assertEquals(updatedRecipe, serviceRecipe);
+	}
+	
+	@Test
+	public void testdRecipe() {
+		Recipe recipe = new Recipe("test", "test", "test", "test", "test", "test");
+		reciperepository.delete(recipe);
+		verify(reciperepository, times(1)).delete(recipe);
+		
+	}
+
+	
+	
 
 }

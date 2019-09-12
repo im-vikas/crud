@@ -44,13 +44,11 @@ public class RecipeService {
 	}
 	
 	
-	public ResponseEntity<?> dRecipe(Long recipeId) {
+	public void dRecipe(Long recipeId) {
 		Recipe recipe = reciperepository.findById(recipeId)
 				.orElseThrow(() -> new ResourceNotFoundException("Recipe", "id", recipeId));
 
 		reciperepository.delete(recipe);
-
-		return ResponseEntity.ok().build();
 	}
 
 }
