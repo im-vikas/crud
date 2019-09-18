@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.example.cookingrecipe.serviceImpl;
+package com.example.cookingrecipe.serviceimpl;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
@@ -15,10 +15,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.stubbing.OngoingStubbing;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.ResponseEntity;
-
 import com.example.cookingrecipe.model.Recipe;
 import com.example.cookingrecipe.repository.RecipeRepository;
 import com.example.cookingrecipe.service.RecipeService;
@@ -61,9 +58,9 @@ public class ServiceImplTest {
 	public void testallRecipe() {
 		
 		
-		List<Recipe> list = new ArrayList<Recipe>();
+		List<Recipe> list = new ArrayList<>();
         Recipe recipe1 = new Recipe("test", "test", "test", "test", "test", "test");
-        Recipe recipe2 = new Recipe("test1", "test1", "test1", "test1", "test1", "test1");	
+        Recipe recipe2 = new Recipe("test1", "test2", "test3", "test4", "test5", "test6");	
         list.add(recipe1);
         list.add(recipe2);
         

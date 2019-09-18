@@ -99,7 +99,7 @@ function loading(){
 	}
 
 	request.send();
-};
+}
 
 
 function processFormData(){
@@ -145,16 +145,16 @@ function editFunction(){
 	obj.ingredients = $('#updateingredients').val();
 	obj.url = $('#updateurl').val();
 
-	var data = JSON.stringify(obj); 
+	var dataJson = JSON.stringify(obj); 
 
 	var id = $('#hdvalue').val();
 	$.ajax({
 		type: "PUT",
 		url: 'http://localhost:8080/api/recipe/'+id,
-		data: data,
-		success: function(data){window.location='index.html'},
+		data: dataJson,
+		success: function() {window.location='index.html'},
 		contentType: 'application/json',
-		dataType: "json",
+		
 	});
 
 }

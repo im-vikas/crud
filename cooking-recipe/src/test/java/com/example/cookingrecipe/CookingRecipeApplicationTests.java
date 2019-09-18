@@ -11,6 +11,7 @@ public class CookingRecipeApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		//this is auto-generated test case
 	}
 
 }
