@@ -33,6 +33,10 @@
 					<li><a href="#addrecipemodal" data-toggle="modal"
 						data-target="#addrecipemodal">Add Recipe</a></li>
 				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>
+							Logout</a></li>
+				</ul>
 			</div>
 		</div>
 	</nav>
@@ -45,8 +49,8 @@
 
 
 
-	
-	
+
+
 	<!----------------------------------addrecipemodal-start---------------------------------------------------->
 	<!-- Modal -->
 	<div class="modal fade" id="addrecipemodal" tabindex="-1" role="dialog"
@@ -65,67 +69,73 @@
 				<div class="modal-body">
 
 					<!-- <form class="form-horizontal" id="formData" role="form"> -->
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="title">Title</label>
-							<div class="col-sm-10">
-								<input type="text" name="title" value="" class="form-control" id="title"
-									placeholder="Title" />
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="title">Title</label>
+						<div class="col-sm-10">
+							<input type="text" name="title" value="" class="form-control"
+								id="title" placeholder="Title" />
 						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="servingsize">Serving
-								Size</label>
-							<div class="col-sm-10">
-								<select class="custom-select form-control" name="servingsize" id="servingsize">
-									<option selected>Open this to Select Serving size</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-									<option value="4">Four</option>
-								</select>
-							</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="servingsize">Serving
+							Size</label>
+						<div class="col-sm-10">
+							<select class="custom-select form-control" name="servingsize"
+								id="servingsize">
+								<option selected>Open this to Select Serving size</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+								<option value="4">Four</option>
+							</select>
 						</div>
+					</div>
 
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="indicator">Category</label>
-							<div class="col-sm-10">
-								<select class="custom-select form-control" name="indicator" id="indicator">
-									<option selected>Open this select Category</option>
-									<option value="veg">VEG</option>
-									<option value="nonveg">NON-VEG</option>
-								</select>
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="indicator">Category</label>
+						<div class="col-sm-10">
+							<select class="custom-select form-control" name="indicator"
+								id="indicator">
+								<option selected>Open this select Category</option>
+								<option value="veg">VEG</option>
+								<option value="nonveg">NON-VEG</option>
+							</select>
 						</div>
-
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="cookingins">Cooking
-								Instruction</label>
-							<div class="col-sm-10">
-								<textarea class="form-control" name="cookingins" id="cookingins" rows="3"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="ingredients">Ingredients</label>
-							<div class="col-sm-10">
-								<textarea class="form-control" name="ingredients"  id="ingredients" rows="3"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="url">Image</label>
-							<div class="col-sm-10">
-							 <input type="file" accept="image/*" name="url"  class="form-control-file" id="url">
-							 </div>
-						</div>
+					</div>
 
 
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button type="button" class="btn btn-default" onclick="processFormData()">Add</button>
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="cookingins">Cooking
+							Instruction</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" name="cookingins" id="cookingins"
+								rows="3"></textarea>
 						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="ingredients">Ingredients</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" name="ingredients"
+								id="ingredients" rows="3"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="url">Image</label>
+						<div class="col-sm-10">
+							<input type="file" accept="image/*" name="url"
+								class="form-control-file" id="url">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button type="button" class="btn btn-default"
+								onclick="processFormData()">Add</button>
+						</div>
+					</div>
 					<!-- </form> -->
 				</div>
 
@@ -137,16 +147,16 @@
 			</div>
 		</div>
 	</div>
-	
-	
-<!----------------------------------addrecipemodal-end-------------------------------------------------------->
-	
-	
-<!----------------------------------updaterecipemodal-start-------------------------------------------------------->
 
-<!-- Modal -->
-	<div class="modal fade" id="updaterecipemodal" tabindex="-1" role="dialog"
-		aria-labelledby="mynewModalLabel" aria-hidden="true">
+
+	<!----------------------------------addrecipemodal-end-------------------------------------------------------->
+
+
+	<!----------------------------------updaterecipemodal-start-------------------------------------------------------->
+
+	<!-- Modal -->
+	<div class="modal fade" id="updaterecipemodal" tabindex="-1"
+		role="dialog" aria-labelledby="mynewModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<!-- Modal Header -->
@@ -161,68 +171,73 @@
 				<div class="modal-body">
 
 					<!-- <form class="form-horizontal" id="editformData" role="form"> -->
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="title">Title</label>
-							<div class="col-sm-10">
-								<input type="text" name="title" value="" class="form-control" id="updatetitle"
-									placeholder="Title" />
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="title">Title</label>
+						<div class="col-sm-10">
+							<input type="text" name="title" value="" class="form-control"
+								id="updatetitle" placeholder="Title" />
 						</div>
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="servingsize">Serving
-								Size</label>
-							<div class="col-sm-10">
-								<select class="custom-select form-control" name="servingsize" id="updateservingsize">
-									<option selected>Open this to Select Serving size</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-									<option value="4">Four</option>
-								</select>
-							</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="servingsize">Serving
+							Size</label>
+						<div class="col-sm-10">
+							<select class="custom-select form-control" name="servingsize"
+								id="updateservingsize">
+								<option selected>Open this to Select Serving size</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+								<option value="4">Four</option>
+							</select>
 						</div>
+					</div>
 
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="indicator">Category</label>
-							<div class="col-sm-10">
-								<select class="custom-select form-control" name="indicator" id="updateindicator">
-									<option selected>Open this select Category</option>
-									<option value="veg">VEG</option>
-									<option value="nonveg">NON-VEG</option>
-								</select>
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="indicator">Category</label>
+						<div class="col-sm-10">
+							<select class="custom-select form-control" name="indicator"
+								id="updateindicator">
+								<option selected>Open this select Category</option>
+								<option value="veg">VEG</option>
+								<option value="nonveg">NON-VEG</option>
+							</select>
 						</div>
-
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="cookingins">Cooking
-								Instruction</label>
-							<div class="col-sm-10">
-								<textarea class="form-control" name="cookingins" id="updatecookingins" rows="3"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="ingredients">Ingredients</label>
-							<div class="col-sm-10">
-								<textarea class="form-control" name="ingredients"  id="updateingredients" rows="3"></textarea>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-sm-2 control-label" for="url">Image</label>
-							<div class="col-sm-10">
-							 <input type="file" accept="image/*" name="url"  class="form-control-file" id="updateurl">
-							 </div>
-						</div>
+					</div>
 
 
-						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-								<button class="btn btn-default" onclick='editFunction()'>Update</button>
-								<input type="text" style="display:none" id="hdvalue">
-							</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="cookingins">Cooking
+							Instruction</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" name="cookingins"
+								id="updatecookingins" rows="3"></textarea>
 						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="ingredients">Ingredients</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" name="ingredients"
+								id="updateingredients" rows="3"></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="url">Image</label>
+						<div class="col-sm-10">
+							<input type="file" accept="image/*" name="url"
+								class="form-control-file" id="updateurl">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-default" onclick='editFunction()'>Update</button>
+							<input type="text" style="display: none" id="hdvalue">
+						</div>
+					</div>
 					<!-- </form> -->
 				</div>
 
@@ -234,9 +249,9 @@
 			</div>
 		</div>
 	</div>
-	
-	
-<!----------------------------------updaterecipemodal-end-------------------------------------------------------->
+
+
+	<!----------------------------------updaterecipemodal-end-------------------------------------------------------->
 
 
 
